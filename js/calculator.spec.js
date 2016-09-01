@@ -37,9 +37,9 @@ describe('Calculator Tests', function() {
         }),
         it('should count square root', function() {
             var a = 4,
-                squareRootResult = 2;
-            var squareRoot = calculator.squareRoot(a);
-            expect(squareRootResult).toBe(squareRoot);
+                squareRoot = 2;
+            var squareRootResult = calculator.squareRoot(a);
+            expect(squareRoot).toBe(squareRootResult);
         }),
         it('should count factorial for 3', function() {
             var a = 3,
@@ -64,5 +64,9 @@ describe('Calculator Tests', function() {
         it('should throw exception in invalid data in subtract', function() {
             var addNumbers = calculator.subtract(6, '');
             expect(addNumbers).toThrow('Invalid data to add!');
+        }),
+        it('should throw exception in invalid data in factorial', function() {
+            var factorial = calculator.factorial(-1);
+            expect(factorial).toThrow('Invalid data to count factorial!');
         });
 });
